@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+
+<p>Search Results</p>
+
+<p>{{request.title}}</p>
+<p>{{request.author}}</p>
+<br>
+<br>
+<br>
+{% for elem in results %}
+<p>{{elem}}</p>
+{% endfor %}
+<br>
+<br>
+<a rel="collection" href="{{ url_for('search') }}">new search</a>
