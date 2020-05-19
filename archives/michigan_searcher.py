@@ -10,7 +10,9 @@ def searcher(title,author,searchtext):
     author_search = regex.sub('',author)
     author_search = author_search.lower()
     if title_search in searchtext and author_search in searchtext:
-        return "Found in Michigan Press Open Access."
+        title = title.replace(" ", "+")
+        return_url = "https://www.fulcrum.org/michigan?utf8=%E2%9C%93&press=michigan&q=%s" % title
+        return "Found in Michigan Press Open Access.",return_url
     else:
         return "Not found in Michigan Press Open Access."
 

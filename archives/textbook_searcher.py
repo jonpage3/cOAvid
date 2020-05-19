@@ -9,7 +9,7 @@ def searcher(tb_issn_col,issn,title,textbooks):
             if issn == str(textbooks.cell_value(row,tb_issn_col)):
                 vital_query = title.replace(" ", "%20")
                 vital_url = "https://bookshelf.vitalsource.com/#/search?q=%s" % vital_query
-                return "Found in Textbooks", "Could be available here: " + vital_url
+                return "Found in Textbooks. Could be available here:", vital_url
             else:
                 return "Not found in Students Stores textbook spreadsheet."
 

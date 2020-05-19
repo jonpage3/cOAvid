@@ -16,7 +16,7 @@ cont = "y"
 while cont == "y":
     title = input("enter title: ")
     author = input("enter author: ")
-    returns = searcher(title,author,jstor_books,jstortitle_col,jstorauthor_col,"JSTOR.")
+    returns = searcher(title,author,jstor_books,jstortitle_col,jstorauthor_col,"JSTOR.", "https://www.jstor.org/open/")
     print(returns)
     cont = input("search again?: ")
 

@@ -193,13 +193,14 @@ while cont == "y":
 
     #spreadsheet searchers
     if jstor_cont == "y":
-        return_helper(spread_sheet_searcher.searcher(title,author,jstor_books,jstortitle_col,jstorauthor_col,"JSTOR."),request)
+        return_helper(spread_sheet_searcher.searcher(title,author,jstor_books,jstortitle_col,jstorauthor_col,"JSTOR.","https://www.jstor.org/open/"),request)
     if muse_cont == "y":
-        return_helper(spread_sheet_searcher.searcher(title,author,muse_books,musetitle_col,museauthor_col,"Project Muse."),request)
+        return_helper(spread_sheet_searcher.searcher(title,author,muse_books,musetitle_col,museauthor_col,"Project Muse.","https://muse.jhu.edu/search?action=oa_browse"),request)
     if ohio_cont == 'y':
-        return_helper(spread_sheet_searcher.searcher(title,author,ohio_books,ohiotitle_col,ohioauthor_col,"Ohio State Uni Press."),request)
+        return_helper(spread_sheet_searcher.searcher(title,author,ohio_books,ohiotitle_col,ohioauthor_col,"Ohio State Uni Press.","https://kb.osu.edu/handle/1811/131"),request)
     if science_direct_cont == 'y':
-        return_helper(spread_sheet_searcher.searcher(title,author,sd_books,sdtitle_col,sdauthor_col,"Science Direct Holdings."),request)
+        return_helper(spread_sheet_searcher.searcher(title,author,sd_books,sdtitle_col,sdauthor_col,"Science Direct Holdings.",
+                                                     "https://auth.lib.unc.edu/ezproxy_auth.php?url=http://www.sciencedirect.com/science/books"),request)
 
     #michigan searcher
     if michigan_cont == "y":

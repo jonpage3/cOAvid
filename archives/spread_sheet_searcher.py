@@ -3,7 +3,7 @@
 import re
 
 #basic searcher for the different books with spreadsheets
-def searcher(title,author,books,title_col,author_col,db_name):
+def searcher(title,author,books,title_col,author_col,db_name, return_url):
     title = title.lower()
     author = author.lower()
     regex = re.compile('[^a-zA-Z]')
@@ -21,7 +21,8 @@ def searcher(title,author,books,title_col,author_col,db_name):
         if title in book_title and author in author_title:
             acc += 1
     if acc > 0:
-        return "Found in "+ db_name
+
+        return "Found in "+ db_name, return_url
     else:
         return "Not found in "+ db_name
 
