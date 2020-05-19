@@ -87,7 +87,12 @@ class Search_results(Resource):
         red_shelf_result = red_shelf_searcher.searcher(title, author)
         return_helper(red_shelf_result, results)
 
-        return make_response(render_template('search_results.html',request=request,results=results),'200')
+        links = [result for result in results if "http" in result]
+        if len(links) > 0:
+            return make_response(render_template('search_results.html', request=request, links=links,result=""), '200')
+        else:
+            return make_response(render_template('search_results.html', request=request, links=links,result="No results were found."), '200')
+
 
 
 

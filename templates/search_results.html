@@ -6,10 +6,11 @@
 <p>{{request.author}}</p>
 <br>
 <br>
+{% for link in links %}
+<a href="{{link}}">{{link}}</a><br>
 <br>
-{% for elem in results %}
-<p>{{elem}}</p>
 {% endfor %}
 <br>
 <br>
+<p>{{ result }}</p>
 <a rel="collection" href="{{ url_for('search') }}">new search</a>
