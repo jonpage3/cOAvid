@@ -6,6 +6,8 @@ from flask_restful import Api, Resource, reqparse, abort
 from archives import red_shelf_searcher, pg_searcher, textbook_searcher, michigan_searcher, spread_sheet_searcher, \
     open_library_searcher, hathi_searcher, unc_searcher
 
+import webbrowser
+
 app = Flask(__name__)
 api = Api(app)
 
@@ -37,17 +39,13 @@ for arg in ['title','author','isbn']:
 def return_helper(result,list):
     if result.__class__.__name__  == 'tuple':
         for item in result:
-            print(item)
             list.append(item)
     elif result.__class__.__name__ == 'dict':
         for key in result:
-            print(key)
             list.append(key)
             for elem in result[key]:
-                print(elem)
                 list.append(elem)
     else:
-        print(result)
         list.append(result)
 
 
@@ -59,10 +57,6 @@ class Search(Resource):
 
         return make_response(render_template('search.html'),'200')
 
-    #def patch(self):
-        #request = new_request_parser.parse_args()
-        #print(request)
-        #return make_response(render_template('search_results.html',request=request),'200')
 
 class Search_results(Resource):
 
@@ -106,4 +100,5 @@ def index():
     return redirect(api.url_for(Search), code=303)
 
 if __name__ == '__main__':
+    webbrowser.open_new("http://127.0.0.1:5000/")
     app.run()

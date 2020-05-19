@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 
-<p>Search Results</p>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+<body>
 
-<p>{{request.title}}</p>
-<p>{{request.author}}</p>
+<h1>Search Results</h1>
+
+<b>{{request.title}}</b><br>
+<b>{{request.author}}</b>
 <br>
 <br>
 {% for link in links %}
 <a href="{{link}}">{{link}}</a><br>
 <br>
 {% endfor %}
-<br>
-<br>
 <p>{{ result }}</p>
-<a rel="collection" href="{{ url_for('search') }}">new search</a>
+<br>
+<br>
+<a rel="collection" href="{{ url_for('search') }}">New Search</a>
+</body>
