@@ -11,7 +11,7 @@ def searcher(title,author,searchtext):
     author_search = author_search.lower()
     if title_search in searchtext and author_search in searchtext:
         title = title.replace(" ", "+")
-        return_url = "https://www.fulcrum.org/michigan?utf8=%E2%9C%93&press=michigan&q=%s" % title
+        return_url = "https://www.fulcrum.org/michigan?utf8=%E2%9C%93&press=michigan&q=" + title
         return "Found in Michigan Press Open Access.",return_url
     else:
         return "Not found in Michigan Press Open Access."
@@ -33,7 +33,7 @@ if __name__ == "__main__":
     while cont == "y":
         title = input("enter title: ")
         author = input("enter author: ")
-        returns = searcher(title, author)
+        returns = searcher(title, author,fulcrum_searchtxt)
         print(returns)
         cont = input("search again?: ")
 
