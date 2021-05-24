@@ -1,5 +1,6 @@
 # cOAvid
 
+*Carolina Open Access Virtual Item Deliverer*
 
 This a program that searches for items in a set of open access and temporary access databases. 
 UNC-Chapel Hill focused.
